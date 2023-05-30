@@ -1,0 +1,68 @@
+[
+  {
+    "model": "main.product",
+    "pk": 1,
+    "fields": {
+      "product_name": "Молоко",
+      "description": "Молоко коровье жирность 3.2%",
+      "picture": "",
+      "category": "Молочная продукция",
+      "price": 90,
+      "time_create": "2023-05-29T15:08:03.841Z",
+      "time_update": "2023-05-29T15:08:03.841Z"
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 2,
+    "fields": {
+      "product_name": "Кефир",
+      "description": "Кефир 2,5%",
+      "picture": "",
+      "category": "Молочная продукция",
+      "price": 100,
+      "time_create": "2023-05-30T14:33:16.814Z",
+      "time_update": "2023-05-30T14:33:16.814Z"
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 1,
+    "fields": {
+      "category_name": "Молочная продукция",
+      "description": "Молоко содержащие продукты"
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 2,
+    "fields": {
+      "category_name": "Напитки",
+      "description": "Безалкогольные Напитки"
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 3,
+    "fields": {
+      "category_name": "Мясо",
+      "description": "Мясная продукция"
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 4,
+    "fields": {
+      "category_name": "Сыр",
+      "description": "Молочная продукция"
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 5,
+    "fields": {
+      "category_name": "Кефир",
+      "description": "Молочная продукция"
+    }
+  }
+]
