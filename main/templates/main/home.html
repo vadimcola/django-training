@@ -1,0 +1,23 @@
+{% extends 'main/index.html' %}
+{% load my_tags%}
+{% block content %}
+    <div class="col">
+        {% for object in object_list %}
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">{{ object.product_name }}</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{ object.price }}<small class="text-muted fw-light">/руб</small></h1>
+            <img class="img-thumbnail"
+                 src="{{ object.picture|mediapath }}"
+                 alt="Thumbnail image">
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>{{ object.description|truncatechars:100}}</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Открыть описание</button>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
