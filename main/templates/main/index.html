@@ -1,6 +1,6 @@
 {% load static %}
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,16 +49,17 @@
       </a>
 
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Главная станица</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" href="main/blog_list/">Шинный блог</a>
         <a class="me-3 py-2 text-dark text-decoration-none" href="#">Категории шин</a>
         <a class="me-3 py-2 text-dark text-decoration-none" href="#">Продукция</a>
       </nav>
-    </div>
 
+    </div>
     <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
       <h1 class="display-6 fw-normal">Магазин шин</h1>
       <p class="fs-5 text-muted">Покупка шин для автомобиля – ответственный выбор. К счастью, современные интернет-технологии позволяют купить шины быстро и с минимальными усилиями.</p>
     </div>
+
   </header>
 
   <main>
@@ -66,8 +67,6 @@
       {% block content %}
       {% endblock %}
     </div>
-
-
   </main>
 
   <footer class="pt-4 my-md-5 pt-md-5 border-top">
@@ -78,6 +77,7 @@
       </div>
     </div>
   </footer>
+
 </div>
   </body>
 </html>

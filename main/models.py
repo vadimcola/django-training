@@ -20,3 +20,17 @@ class Category(models.Model):
 
     def __str__(self):
         return f'{self.category_name} {self.description}'
+
+
+class Blog(models.Model):
+    title = models.CharField(max_length=255, verbose_name='заголовок')
+    slug = models.CharField(max_length=255, verbose_name='url')
+    content = models.TextField(verbose_name='запись')
+    picture = models.ImageField(upload_to="photos/%Y/%m/%d/", verbose_name='Картинка', blank=True)
+    time_create = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
+    is_published = models.BooleanField(default=True, verbose_name='Статус публикации')
+    views = models.IntegerField(default=0, verbose_name='количество просмотров')
+
+
+
+
