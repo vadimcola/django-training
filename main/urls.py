@@ -9,8 +9,8 @@ app_name = MainConfig.name
 urlpatterns = [
     path('', ProductListView.as_view()),
     path('blog/', BlogListView.as_view(), name='blog_list'),
-    path('blog/<int:pk>/', BlogDetailView.as_view(), name='blog_item'),
     path('blog/create/', BlogCreateView.as_view(), name='blog_create'),
-    path('blog/update/<int:pk>/', BlogUpdateView.as_view(), name='blog_update'),
-    path('blog/delete/<int:pk>/', BlogDeleteView.as_view(), name='blog_delete'),
+    path('blog/<slug:the_slug>/', BlogDetailView.as_view(), name='blog_item'),
+    path('blog/update/<slug:the_slug>/', BlogUpdateView.as_view(), name='blog_update'),
+    path('blog/delete/<slug:the_slug>/', BlogDeleteView.as_view(), name='blog_delete'),
 ]

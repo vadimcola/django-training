@@ -20,11 +20,11 @@
               <li>{{ object.content}}</li>
             </ul>
             <h4 class="my-2 fw-normal">{{ object.views }}<small class="my-2 fw-normal">  просмотров</small></h4>
-              <a class="btn btn-primary btn-lg" href="{% url 'main:blog_item' object.pk %}" role="button">Открыть запись</a>
+              <a class="btn btn-primary btn-lg" href="{% url 'main:blog_item' object.slug %}" role="button">Открыть запись</a>
               <h1> </h1>
-              <a class="btn btn-success btn-lg" href="{% url 'main:blog_update' object.pk %}" role="button">Изменить запись</a>
+              <a class="btn btn-success btn-lg" href="{% url 'main:blog_update' object.slug %}" role="button">Изменить запись</a>
               <h1></h1>
-              <a class="btn btn-danger btn-lg" href="{% url 'main:blog_delete' object.pk %}" role="button">Удалить запись</a>
+              <a class="btn btn-danger btn-lg" href="{% url 'main:blog_delete' object.slug %}" role="button">Удалить запись</a>
           </div>
         </div>
     {% endfor %}

@@ -20,3 +20,4 @@ class StudentAdmin(admin.ModelAdmin):
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
     list_display = ('pk', 'title', 'slug', 'content', 'picture', 'is_published', 'views')
+    prepopulated_fields = {"slug": ("title",)}
