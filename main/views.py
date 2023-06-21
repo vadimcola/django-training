@@ -44,10 +44,12 @@ class BlogCreateView(generic.CreateView):
 class BlogUpdateView(generic.UpdateView):
     model = Blog
     fields = ('title', 'slug', 'content', 'picture', 'is_published')
-    success_url = reverse_lazy('main:blog_item')
     template_name = 'main/blog_form.html'
     slug_url_kwarg = 'the_slug'
     slug_field = 'slug'
+
+    def get_success_url(self):
+        return reverse('main:blog_item', kwargs={'the_slug': self.object.slug})
 
 
 class BlogDeleteView(generic.DeleteView):

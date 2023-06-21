@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="967e65e8-4611-48cd-97fe-c5aa152e0ec0" name="Changes" comment="Реализован slug">
-      <change afterPath="$PROJECT_DIR$/media/media/photos/2023/06/21/6345837245.jpeg" afterDir="false" />
+    <list default="true" id="967e65e8-4611-48cd-97fe-c5aa152e0ec0" name="Changes" comment="no comment">
+      <change afterPath="$PROJECT_DIR$/media/media/photos/2023/06/21/4c047abc3be4a8f489fb8689a40050da.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/main/blog_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/blog_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687243684419</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="no comment">
+      <created>1687346354982</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1687346354982</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -186,9 +191,9 @@
     <MESSAGE value="заполнена БД продуктами" />
     <MESSAGE value="создан шаблон и сделаны настройки" />
     <MESSAGE value="Перевёл имеющиеся контроллер с FBV на CBV." />
-    <MESSAGE value="no comment" />
     <MESSAGE value="Реализован CRUD" />
     <MESSAGE value="Реализован slug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализован slug" />
+    <MESSAGE value="no comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="no comment" />
   </component>
 </project>
