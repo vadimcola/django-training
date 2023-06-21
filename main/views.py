@@ -1,6 +1,6 @@
 from django.forms import FileField
 from django.shortcuts import render, get_object_or_404
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views import generic
 from django.views.generic import *
 
@@ -26,6 +26,13 @@ class BlogDetailView(generic.DetailView):
     slug_url_kwarg = 'the_slug'
     slug_field = 'slug'
 
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        self.object.views += 1
+        self.object.save()
+        context = self.get_context_data(object=self.object)
+        return self.render_to_response(context)
+
 
 class BlogCreateView(generic.CreateView):
     model = Blog
@@ -33,10 +40,11 @@ class BlogCreateView(generic.CreateView):
     success_url = reverse_lazy('main:blog_list')
     template_name = 'main/blog_form.html'
 
+
 class BlogUpdateView(generic.UpdateView):
     model = Blog
     fields = ('title', 'slug', 'content', 'picture', 'is_published')
-    success_url = reverse_lazy('main:blog_list')
+    success_url = reverse_lazy('main:blog_item')
     template_name = 'main/blog_form.html'
     slug_url_kwarg = 'the_slug'
     slug_field = 'slug'

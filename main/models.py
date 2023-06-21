@@ -45,4 +45,4 @@ class Blog(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('blog_list', kwargs={'the_slug': self.slug})
+        return reverse('main:blog_item', kwargs={'the_slug': self.slug})

@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="967e65e8-4611-48cd-97fe-c5aa152e0ec0" name="Changes" comment="Реализован CRUD">
-      <change afterPath="$PROJECT_DIR$/main/migrations/0005_alter_blog_picture_alter_blog_slug.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/admin.py" afterDir="false" />
+    <list default="true" id="967e65e8-4611-48cd-97fe-c5aa152e0ec0" name="Changes" comment="Реализован slug">
+      <change afterPath="$PROJECT_DIR$/media/media/photos/2023/06/21/6345837245.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/main/blog_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/blog_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/main/blog_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/blog_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687236905408</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Реализован slug">
+      <created>1687243684419</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1687243684419</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -182,6 +188,7 @@
     <MESSAGE value="Перевёл имеющиеся контроллер с FBV на CBV." />
     <MESSAGE value="no comment" />
     <MESSAGE value="Реализован CRUD" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализован CRUD" />
+    <MESSAGE value="Реализован slug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализован slug" />
   </component>
 </project>
