@@ -4,11 +4,35 @@ from django.urls import reverse_lazy, reverse
 from django.views import generic
 from django.views.generic import *
 
+from main.forms import ProductForm
 from main.models import Product, Blog
 
 
 class ProductListView(generic.ListView):
     model = Product
+
+
+class ProductDetailView(generic.DetailView):
+    model = Product
+    template_name = 'main/product_detail.html'
+
+
+class ProductCreateView(generic.CreateView):
+    model = Product
+    form_class = ProductForm
+    success_url = reverse_lazy('main:prod_list')
+
+
+class ProductUpdateView(generic.UpdateView):
+    model = Product
+    form_class = ProductForm
+    success_url = reverse_lazy('main:prod_list')
+
+
+class ProductDeleteView(generic.DeleteView):
+    model = Product
+    success_url = reverse_lazy('main:prod_list')
+    template_name = 'main/product_confirm_delete.html'
 
 
 class BlogListView(generic.ListView):
