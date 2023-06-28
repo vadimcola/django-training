@@ -3,11 +3,19 @@
 {% block content %}
     <div class="jumbotron p-3 pb-md-4 mx-auto text-center">
             <form method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <input type="submit" class="btn btn-success" value="{% if object %} Изменить {% else %} Создать {% endif %}" >
-                    <h1></h1>
-                    <a class="btn btn-danger btn-lg" href="{% url 'main:prod_list' %}" role="button">Назад</a>
+                <div class="card-body">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type="submit" class="btn btn-success" value="{% if object %} Изменить {% else %} Создать {% endif %}" >
+                        <h1></h1>
+                        <a class="btn btn-danger btn-lg" href="{% url 'main:prod_list' %}" role="button">Назад</a>
+                </div>
+                <div class="card-body">
+                    {{ formset.management_form }}
+                    {% for form in formset.forms %}
+                        {{ form.as_p }}
+                    {% endfor %}
+                </div>
             </form>
     </div>
 {% endblock %}

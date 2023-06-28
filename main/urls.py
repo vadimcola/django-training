@@ -7,8 +7,6 @@ from main.views import ProductListView, BlogListView, BlogDetailView, BlogCreate
 
 app_name = MainConfig.name
 
-
-
 urlpatterns = [
     path('', ProductListView.as_view(), name='prod_list'),
     path('prod/<int:pk>/', ProductDetailView.as_view(), name='prod_item'),

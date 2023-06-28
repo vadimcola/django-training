@@ -15,6 +15,14 @@
                 <ul class="list-unstyled mt-3 mb-4">
                   <li>{{ object.description}}</li>
                 </ul>
+                  {% for version in product.version.all %}
+                    <p class="card-text">
+                        {% if version.version_attribute %}
+                        Активная версия: {{ version.version_name }}
+                        Номер версии: {{ version.version_number}}
+                        {% endif %}
+                    </p>
+                  {% endfor %}
                 <a class="btn btn-success btn-lg" href="{% url 'main:prod_list' %}" role="button">Назад</a>
               </div>
             </div>
