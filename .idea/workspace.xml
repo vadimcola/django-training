@@ -4,9 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="967e65e8-4611-48cd-97fe-c5aa152e0ec0" name="Changes" comment="Задание № 2 реализовано">
+    <list default="true" id="967e65e8-4611-48cd-97fe-c5aa152e0ec0" name="Changes" comment="Задание № 3 реализовано">
+      <change afterPath="$PROJECT_DIR$/users/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/management/commands/csu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/migrations/0002_category_created_at.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/migrations/0003_remove_category_created_at_alter_product_category.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/migrations/0004_blog.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/migrations/0005_alter_blog_picture_alter_blog_slug.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/migrations/0006_version.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/migrations/0007_alter_version_product_name.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/migrations/0008_alter_version_product_name.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,15 +34,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="hw21.1" />
+        <entry key="$PROJECT_DIR$" value="hw22.1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -198,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687968354962</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Задание № 3 реализовано">
+      <created>1688047685124</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1688047685124</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -217,6 +242,7 @@
     <MESSAGE value="Все задания выполнены" />
     <MESSAGE value="Задание № 1 реализовано" />
     <MESSAGE value="Задание № 2 реализовано" />
-    <option name="LAST_COMMIT_MESSAGE" value="Задание № 2 реализовано" />
+    <MESSAGE value="Задание № 3 реализовано" />
+    <option name="LAST_COMMIT_MESSAGE" value="Задание № 3 реализовано" />
   </component>
 </project>
