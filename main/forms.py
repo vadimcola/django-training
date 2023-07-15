@@ -6,7 +6,7 @@ from main.models import Product, Version
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        exclude = ('time_create', 'time_update',)
+        exclude = ('time_create', 'time_update', 'owner',)
 
     def _init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

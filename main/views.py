@@ -11,6 +11,11 @@ from main.models import Product, Blog, Version
 class ProductListView(generic.ListView):
     model = Product
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        queryset = queryset.filter(owner=self.request.user)
+        return queryset
+
 
 class ProductDetailView(generic.DetailView):
     model = Product
@@ -41,6 +46,9 @@ class ProductCreateView(generic.CreateView):
         if formset.is_valid():
             formset.instance = self.object
             formset.save()
+
+        self.object.owner = self.request.user
+        self.object.save()
         return super().form_valid(form)
 
 
