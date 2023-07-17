@@ -6,9 +6,10 @@ from django.views.generic import *
 
 from main.forms import ProductForm, VersionForm
 from main.models import Product, Blog, Version
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class ProductListView(generic.ListView):
+class ProductListView(LoginRequiredMixin, generic.ListView):
     model = Product
 
     def get_queryset(self):
@@ -17,12 +18,12 @@ class ProductListView(generic.ListView):
         return queryset
 
 
-class ProductDetailView(generic.DetailView):
+class ProductDetailView(LoginRequiredMixin, generic.DetailView):
     model = Product
     template_name = 'main/product_detail.html'
 
 
-class ProductCreateView(generic.CreateView):
+class ProductCreateView(LoginRequiredMixin, generic.CreateView):
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy('main:prod_list')
@@ -42,6 +43,7 @@ class ProductCreateView(generic.CreateView):
         context_data = self.get_context_data()
         formset = context_data['formset']
         self.object = form.save()
+        self.object.save()
 
         if formset.is_valid():
             formset.instance = self.object
@@ -52,7 +54,7 @@ class ProductCreateView(generic.CreateView):
         return super().form_valid(form)
 
 
-class ProductUpdateView(generic.UpdateView):
+class ProductUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy('main:prod_list')
@@ -79,13 +81,13 @@ class ProductUpdateView(generic.UpdateView):
         return super().form_valid(form)
 
 
-class ProductDeleteView(generic.DeleteView):
+class ProductDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Product
     success_url = reverse_lazy('main:prod_list')
     template_name = 'main/product_confirm_delete.html'
 
 
-class BlogListView(generic.ListView):
+class BlogListView(LoginRequiredMixin, generic.ListView):
     model = Blog
 
     def get_queryset(self):
@@ -94,7 +96,7 @@ class BlogListView(generic.ListView):
         return queryset
 
 
-class BlogDetailView(generic.DetailView):
+class BlogDetailView(LoginRequiredMixin, generic.DetailView):
     model = Blog
     template_name = 'main/blog_detail.html'
     slug_url_kwarg = 'the_slug'
@@ -108,14 +110,14 @@ class BlogDetailView(generic.DetailView):
         return self.render_to_response(context)
 
 
-class BlogCreateView(generic.CreateView):
+class BlogCreateView(LoginRequiredMixin, generic.CreateView):
     model = Blog
     fields = ('title', 'slug', 'content', 'picture', 'is_published')
     success_url = reverse_lazy('main:blog_list')
     template_name = 'main/blog_form.html'
 
 
-class BlogUpdateView(generic.UpdateView):
+class BlogUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Blog
     fields = ('title', 'slug', 'content', 'picture', 'is_published')
     template_name = 'main/blog_form.html'
@@ -126,7 +128,7 @@ class BlogUpdateView(generic.UpdateView):
         return reverse('main:blog_item', kwargs={'the_slug': self.object.slug})
 
 
-class BlogDeleteView(generic.DeleteView):
+class BlogDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Blog
     success_url = reverse_lazy('main:blog_list')
     template_name = 'main/blog_confirm_delete.html'
