@@ -1,215 +1,65 @@
 [
   {
-    "model": "main.product",
+    "model": "users.user",
     "pk": 1,
     "fields": {
-      "product_name": "Шина Nortec М-145",
-      "description": "Летние шины Алтайшина М-145 предназначены для установки на легковые автомобили. Одна покрышка выдерживает нагрузку до 425 кг, а скорость использования не должна превышать 150 км/ч.",
-      "picture": "images/М-145.jpg",
-      "category": 1,
-      "price": 2400,
-      "time_create": "2023-06-09T15:33:13.481Z",
-      "time_update": "2023-06-27T15:49:10.829Z"
+      "password": "pbkdf2_sha256$600000$HdqKuAJMKP2ocInDl2kY3j$Bac1aKemdZ6aZUbFw72hLrnUHAsv2IuMqW32DY9Wh+U=",
+      "last_login": "2023-07-18T16:52:52.500Z",
+      "is_superuser": true,
+      "first_name": "Admin",
+      "last_name": "SkyPro",
+      "is_staff": true,
+      "date_joined": "2023-07-11T13:40:56.068Z",
+      "email": "admin@sky.pro",
+      "phone": "7022235222",
+      "avatar": "users/4c047abc3be4a8f489fb8689a40050da_bBzhQOm.jpeg",
+      "country": "Россия",
+      "is_active": true,
+      "verification_key": "Не верифицирован",
+      "groups": [],
+      "user_permissions": []
     }
   },
   {
-    "model": "main.product",
-    "pk": 2,
+    "model": "users.user",
+    "pk": 28,
     "fields": {
-      "product_name": "Шина FORWARD ARCTIC 700",
-      "description": "Форвард Арктик 700 – модель зимних шин для легковых автомобилей от Алтайского шинного комбината.Шины просто созданы для суровых условий нашей российской зимы. Покрышки выдерживают самые низкие температуры, не трескаются и не повреждаются. Особый рисунок протектора обеспечивает надежное сцепление с любым дорожным полотном – от льда до заснеженной дороги. Благодаря блокам, образующим направленный рисунок, и большому количеству ламелей шина не теряет управляемости на льду и способна выбраться из большого сугроба.",
-      "picture": "images/Arctic700.jpg",
-      "category": 1,
-      "price": 2207,
-      "time_create": "2023-06-09T16:06:02.825Z",
-      "time_update": "2023-06-09T16:06:02.825Z"
+      "password": "pbkdf2_sha256$600000$UGaP9jVlmTc13xxutN6XBc$tAYiC0ivHX94D3iefqlkWtjK8fUhDOHSH3hnrRibXD0=",
+      "last_login": "2023-07-17T15:51:28.176Z",
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "date_joined": "2023-07-15T15:40:22.140Z",
+      "email": "vadimcola@mail.ru",
+      "phone": "7022235222",
+      "avatar": "",
+      "country": "казахстан",
+      "is_active": true,
+      "verification_key": "718595053377736360904",
+      "groups": [],
+      "user_permissions": []
     }
   },
   {
-    "model": "main.product",
-    "pk": 3,
+    "model": "users.user",
+    "pk": 29,
     "fields": {
-      "product_name": "Шина FORWARD TRACTION О-40БМ",
-      "description": "Грузовые шины Forward Traction О-40БМ обладают рядом отличных характеристик. Благодаря особому рисунку протектора шины можно использовать в условиях бездорожья, а прочный каркас и качественная резина позволяют шине выдерживать большие нагрузки.",
-      "picture": "images/O40bm.jpg",
-      "category": 2,
-      "price": 13950,
-      "time_create": "2023-06-09T16:06:02.825Z",
-      "time_update": "2023-06-28T14:48:43.068Z"
-    }
-  },
-  {
-    "model": "main.product",
-    "pk": 4,
-    "fields": {
-      "product_name": "Шина FORWARD TRACTION 310",
-      "description": "Грузовые шины Forward Traction 310 – пример отличного соотношения цены и качества. Покрышки выдерживают большие нагрузки и обеспечивают безопасное и комфортное движение по любым покрытиям.",
-      "picture": "images/310.jpg",
-      "category": 2,
-      "price": 18507,
-      "time_create": "2023-06-09T16:06:02.825Z",
-      "time_update": "2023-06-09T16:06:02.825Z"
-    }
-  },
-  {
-    "model": "main.product",
-    "pk": 5,
-    "fields": {
-      "product_name": "Шина Nortec IND 02",
-      "description": "Бескамерные индустриальные шины Нортек IND 02 устанавливаются на строительные, подъемно-транспортные и дорожные машины. Основные достоинства этой модели –прочность, износостойкость и хорошая проходимость.",
-      "picture": "images/IND02.jpg",
-      "category": 3,
-      "price": 9195,
-      "time_create": "2023-06-09T16:06:02.825Z",
-      "time_update": "2023-06-09T16:06:02.825Z"
-    }
-  },
-  {
-    "model": "main.product",
-    "pk": 6,
-    "fields": {
-      "product_name": "Шина Nortec FT-214",
-      "description": "NORTEC FT-214 - недорогие, но качественные шины для вилочных погрузчиков. Шины Нортек производятся на Алтайском шинном комбинате. Современное производство и качественное сырье позволяют предприятию радовать покупателя хорошим качеством продукции и при этом низкими ценами.",
-      "picture": "images/FT214.png",
-      "category": 3,
-      "price": 5313,
-      "time_create": "2023-06-09T16:06:02.825Z",
-      "time_update": "2023-06-28T15:29:30.183Z"
-    }
-  },
-  {
-    "model": "main.category",
-    "pk": 1,
-    "fields": {
-      "category_name": "Легковые",
-      "description": "Шина предназначена, для использования на легковых автомобилях "
-    }
-  },
-  {
-    "model": "main.category",
-    "pk": 2,
-    "fields": {
-      "category_name": "Грузовые",
-      "description": "Шина предназначена, для использования на грузовых автомобилях"
-    }
-  },
-  {
-    "model": "main.category",
-    "pk": 3,
-    "fields": {
-      "category_name": "Индустриальная",
-      "description": "Шина предназначена, для использованияна специальной строительной техники"
-    }
-  },
-  {
-    "model": "main.blog",
-    "pk": 1,
-    "fields": {
-      "title": "Зимняя шина",
-      "slug": "zimnaya-shina",
-      "content": "Я купил себе зимнюю шину новую и крутую",
-      "picture": "photos/2023/06/18/6345837245.jpeg",
-      "time_create": "2023-06-18T05:37:54.326Z",
-      "is_published": true,
-      "views": 11
-    }
-  },
-  {
-    "model": "main.blog",
-    "pk": 2,
-    "fields": {
-      "title": "Шины Nokian",
-      "slug": "shiny-nokian-4",
-      "content": "На сегодняшний день автомобильные покрышки от финского проивзодителя Нокиан являются едва ли не самыми популярными и покупаемыми в Европе. Такой факт легко объяснить – финская компания регулярно работает над улучшением эксплуатационных характеристик собственной продукции, что в итоге приводит к созданию почти самых совершенных шин для летнего и зимнего сезонов.g",
-      "picture": "photos/2023/06/18/testirovanie-shin-nokian.jpeg",
-      "time_create": "2023-06-18T06:42:15.526Z",
-      "is_published": true,
-      "views": 3
-    }
-  },
-  {
-    "model": "main.blog",
-    "pk": 21,
-    "fields": {
-      "title": "ааа",
-      "slug": "dddd",
-      "content": "аааddddfff",
-      "picture": "",
-      "time_create": "2023-06-21T11:07:01.202Z",
-      "is_published": false,
-      "views": 0
-    }
-  },
-  {
-    "model": "main.blog",
-    "pk": 22,
-    "fields": {
-      "title": "ggg",
-      "slug": "ggg",
-      "content": "ggg",
-      "picture": "media/photos/2023/06/21/6345837245.jpeg",
-      "time_create": "2023-06-21T11:14:27.117Z",
-      "is_published": false,
-      "views": 0
-    }
-  },
-  {
-    "model": "main.blog",
-    "pk": 23,
-    "fields": {
-      "title": "ппп",
-      "slug": "ff",
-      "content": "fff",
-      "picture": "media/photos/2023/06/21/4c047abc3be4a8f489fb8689a40050da.jpeg",
-      "time_create": "2023-06-21T12:21:58.419Z",
-      "is_published": false,
-      "views": 2
-    }
-  },
-  {
-    "model": "main.blog",
-    "pk": 24,
-    "fields": {
-      "title": "шины  Лето",
-      "slug": "shi",
-      "content": "ллллл",
-      "picture": "media/photos/2023/06/27/4c047abc3be4a8f489fb8689a40050da.jpeg",
-      "time_create": "2023-06-27T13:36:15.442Z",
-      "is_published": false,
-      "views": 2
-    }
-  },
-  {
-    "model": "main.blog",
-    "pk": 25,
-    "fields": {
-      "title": "off",
-      "slug": "ffffff",
-      "content": "ff",
-      "picture": "",
-      "time_create": "2023-06-27T14:04:53.282Z",
-      "is_published": false,
-      "views": 2
-    }
-  },
-  {
-    "model": "main.version",
-    "pk": 1,
-    "fields": {
-      "product_name": 3,
-      "version_number": 1,
-      "version_name": "Версия номер один",
-      "version_attribute": true
-    }
-  },
-  {
-    "model": "main.version",
-    "pk": 2,
-    "fields": {
-      "product_name": 6,
-      "version_number": 1,
-      "version_name": "Акция",
-      "version_attribute": true
+      "password": "pbkdf2_sha256$600000$W2lCEZv15RJueXte0rwSBy$9ycRQ0NKQ0rshfLN5HqvdR2LnHn9Q2zFBYzL1dP3Ulc=",
+      "last_login": "2023-07-17T16:09:05.976Z",
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "date_joined": "2023-07-17T16:05:45.594Z",
+      "email": "vadimcola1983@yandex.ru",
+      "phone": "2344",
+      "avatar": "users/Сиэтл_и_стратовулкан_Рейнир_США.jpeg",
+      "country": "Армения",
+      "is_active": true,
+      "verification_key": "926916205424724548155",
+      "groups": [],
+      "user_permissions": []
     }
   }
 ]
