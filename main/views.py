@@ -10,14 +10,15 @@ from main.models import Product, Blog, Version
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
 
-class ProductListView(LoginRequiredMixin, PermissionRequiredMixin, generic.ListView):
+class ProductListView(LoginRequiredMixin, generic.ListView):
     model = Product
-    permission_required = 'main.view_product'
 
-    #def get_queryset(self):
-        #queryset = super().get_queryset()
-        #queryset = queryset.filter(owner=self.request.user)
-        #return queryset
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        if not self.request.user.is_staff:
+            queryset = queryset.filter(owner=self.request.user)
+
+        return queryset
 
 
 class ProductDetailView(LoginRequiredMixin, generic.DetailView):
@@ -25,9 +26,8 @@ class ProductDetailView(LoginRequiredMixin, generic.DetailView):
     template_name = 'main/product_detail.html'
 
 
-class ProductCreateView(LoginRequiredMixin, PermissionRequiredMixin, generic.CreateView):
+class ProductCreateView(LoginRequiredMixin, generic.CreateView):
     model = Product
-    permission_required = 'main.add_product'
     form_class = ProductForm
     success_url = reverse_lazy('main:prod_list')
 
@@ -86,7 +86,7 @@ class ProductUpdateView(LoginRequiredMixin, PermissionRequiredMixin, generic.Upd
 
     def get_object(self, queryset=None):
         self.object = super().get_object(queryset)
-        if self.object.owner != self.request.user:
+        if self.object.owner != self.request.user and not self.request.user.is_staff:
             raise Http404
         return self.object
 
