@@ -20,7 +20,9 @@
                       <h1> </h1>
                     <a class="btn btn-success btn-lg" href="{% url 'main:prod_update' object.pk %}" role="button">Изменить</a>
                         <h1></h1>
+                    {% if perms.main.delete_product %}
                     <a class="btn btn-danger btn-lg" href="{% url 'main:prod_delete' object.pk %}" role="button">Удалить</a>
+                    {% endif %}
               </div>
             </div>
         </div>
