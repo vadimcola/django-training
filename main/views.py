@@ -16,7 +16,7 @@ class ProductListView(LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         queryset = super().get_queryset()
         if not self.request.user.is_staff:
-            queryset = queryset.filter(owner=self.request.user)
+            queryset = queryset.filter()
 
         return queryset
 
@@ -26,10 +26,11 @@ class ProductDetailView(LoginRequiredMixin, generic.DetailView):
     template_name = 'main/product_detail.html'
 
 
-class ProductCreateView(LoginRequiredMixin, generic.CreateView):
+class ProductCreateView(LoginRequiredMixin, PermissionRequiredMixin, generic.CreateView):
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy('main:prod_list')
+    permission_required = 'main.add_product'
 
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
@@ -86,7 +87,7 @@ class ProductUpdateView(LoginRequiredMixin, PermissionRequiredMixin, generic.Upd
 
     def get_object(self, queryset=None):
         self.object = super().get_object(queryset)
-        if self.object.owner != self.request.user and not self.request.user.is_staff:
+        if self.object.owner != self.request.user and not self.request.user.is_superuser:
             raise Http404
         return self.object
 
