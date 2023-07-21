@@ -21,6 +21,8 @@ class ProductListView(LoginRequiredMixin, generic.ListView):
         return queryset
 
 
+
+
 class ProductDetailView(LoginRequiredMixin, generic.DetailView):
     model = Product
     template_name = 'main/product_detail.html'
