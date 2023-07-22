@@ -9,6 +9,8 @@ from main.forms import ProductForm, VersionForm
 from main.models import Product, Blog, Version
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
+from main.services import get_category_cache
+
 
 class ProductListView(LoginRequiredMixin, generic.ListView):
     model = Product
@@ -19,8 +21,6 @@ class ProductListView(LoginRequiredMixin, generic.ListView):
             queryset = queryset.filter()
 
         return queryset
-
-
 
 
 class ProductDetailView(LoginRequiredMixin, generic.DetailView):
@@ -148,3 +148,16 @@ class BlogDeleteView(LoginRequiredMixin, generic.DeleteView):
     template_name = 'main/blog_confirm_delete.html'
     slug_url_kwarg = 'the_slug'
     slug_field = 'slug'
+
+
+def show_category(request, cat_id):
+    product = Product.objects.filter(category_id=cat_id)
+    cats = get_category_cache()
+
+    context = {
+        'product': product,
+        'cats': cats,
+        'cat_selected': cat_id,
+    }
+
+    return render(request, 'main/index.html', context=context)
