@@ -1,6 +1,6 @@
 from django.urls import path
 from django.views.generic import *
-
+from django.views.decorators.cache import cache_page
 from main.apps import MainConfig
 from main.views import ProductListView, BlogListView, BlogDetailView, BlogCreateView, BlogUpdateView, BlogDeleteView, \
     ProductDetailView, ProductCreateView, ProductUpdateView, ProductDeleteView
@@ -8,8 +8,8 @@ from main.views import ProductListView, BlogListView, BlogDetailView, BlogCreate
 app_name = MainConfig.name
 
 urlpatterns = [
-    path('', ProductListView.as_view(), name='prod_list'),
-    path('prod/<int:pk>/', ProductDetailView.as_view(), name='prod_item'),
+    path('', cache_page(60)(ProductListView.as_view()), name='prod_list'),
+    path('prod/<int:pk>/', cache_page(60)(ProductDetailView.as_view()), name='prod_item'),
     path('prod/create/', ProductCreateView.as_view(), name='prod_create'),
     path('prod/update/<int:pk>/', ProductUpdateView.as_view(), name='prod_update'),
     path('prod/delete/<int:pk>/', ProductDeleteView.as_view(), name='prod_delete'),
