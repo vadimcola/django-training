@@ -46,3 +46,14 @@ class Blog(models.Model):
 
     def get_absolute_url(self):
         return reverse('main:blog_item', kwargs={'the_slug': self.slug})
+
+
+class Version(models.Model):
+    product_name = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='version',
+                                     verbose_name='Наименование продукта')
+    version_number = models.IntegerField(verbose_name='Номер версии', blank=True)
+    version_name = models.CharField(max_length=255, verbose_name='Наименование версии')
+    version_attribute = models.BooleanField(default=True, verbose_name='Статус версии')
+
+    def __str__(self):
+        return f"{self.version_name}"

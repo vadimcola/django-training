@@ -1,8 +1,7 @@
 {% extends 'main/index.html' %}
 {% load my_tags %}
-{% block content %}
 
-        {% for object in object_list %}
+{% block content %}
         <div class="col-3">
             <div class="card mb-4 rounded-3 shadow-sm">
               <div class="card-header py-3">
@@ -14,15 +13,18 @@
                      src="{{ object.picture|mediapath }}"
                      alt="Thumbnail image">
                 <ul class="list-unstyled mt-3 mb-4">
-                  <li>{{ object.description|truncatechars:100}}</li>
+                  <li>{{ object.description}}</li>
                 </ul>
-                    <a class="btn btn-primary btn-lg" href="{% url 'main:prod_item' object.pk %}" role="button">Открыть описание</a>
-                      <h1> </h1>
-                    <a class="btn btn-success btn-lg" href="{% url 'main:prod_update' object.pk %}" role="button">Изменить</a>
-                        <h1></h1>
-                    <a class="btn btn-danger btn-lg" href="{% url 'main:prod_delete' object.pk %}" role="button">Удалить</a>
+                  {% for version in product.version.all %}
+                    <p class="card-text">
+                        {% if version.version_attribute %}
+                        Активная версия: {{ version.version_name }}
+                        Номер версии: {{ version.version_number}}
+                        {% endif %}
+                    </p>
+                  {% endfor %}
+                <a class="btn btn-success btn-lg" href="{% url 'main:prod_list' %}" role="button">Назад</a>
               </div>
             </div>
         </div>
-        {% endfor %}
 {% endblock %}
