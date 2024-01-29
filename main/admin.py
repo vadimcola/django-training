@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from main.models import Product, Category
+from main.models import *
 
 
 # Register your models here.
@@ -15,3 +15,9 @@ class StudentAdmin(admin.ModelAdmin):
 @admin.register(Category)
 class StudentAdmin(admin.ModelAdmin):
     list_display = ('pk', 'category_name')
+
+
+@admin.register(Blog)
+class BlogAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'title', 'slug', 'content', 'picture', 'is_published', 'views')
+    prepopulated_fields = {"slug": ("title",)}
