@@ -1,4 +1,5 @@
 from django.forms import FileField, inlineformset_factory
+from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.views import generic
@@ -6,7 +7,7 @@ from django.views.generic import *
 
 from main.forms import ProductForm, VersionForm
 from main.models import Product, Blog, Version
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
 
 class ProductListView(LoginRequiredMixin, generic.ListView):
@@ -14,7 +15,9 @@ class ProductListView(LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        queryset = queryset.filter(owner=self.request.user)
+        if not self.request.user.is_staff:
+            queryset = queryset.filter()
+
         return queryset
 
 
@@ -23,10 +26,11 @@ class ProductDetailView(LoginRequiredMixin, generic.DetailView):
     template_name = 'main/product_detail.html'
 
 
-class ProductCreateView(LoginRequiredMixin, generic.CreateView):
+class ProductCreateView(LoginRequiredMixin, PermissionRequiredMixin, generic.CreateView):
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy('main:prod_list')
+    permission_required = 'main.add_product'
 
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
@@ -54,8 +58,9 @@ class ProductCreateView(LoginRequiredMixin, generic.CreateView):
         return super().form_valid(form)
 
 
-class ProductUpdateView(LoginRequiredMixin, generic.UpdateView):
+class ProductUpdateView(LoginRequiredMixin, PermissionRequiredMixin, generic.UpdateView):
     model = Product
+    permission_required = 'main.change_product'
     form_class = ProductForm
     success_url = reverse_lazy('main:prod_list')
 
@@ -80,9 +85,16 @@ class ProductUpdateView(LoginRequiredMixin, generic.UpdateView):
             formset.save()
         return super().form_valid(form)
 
+    def get_object(self, queryset=None):
+        self.object = super().get_object(queryset)
+        if self.object.owner != self.request.user and not self.request.user.is_superuser:
+            raise Http404
+        return self.object
 
-class ProductDeleteView(LoginRequiredMixin, generic.DeleteView):
+
+class ProductDeleteView(LoginRequiredMixin, PermissionRequiredMixin, generic.DeleteView):
     model = Product
+    permission_required = 'main.delete_product'
     success_url = reverse_lazy('main:prod_list')
     template_name = 'main/product_confirm_delete.html'
 

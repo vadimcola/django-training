@@ -11,7 +11,7 @@ class User(AbstractUser):
     country = models.CharField(max_length=35, verbose_name='страна', blank=True)
 
     is_active = models.BooleanField(default=False, verbose_name='Активирован')
-    verification_key = models.CharField(default='Не верифицирован', verbose_name='Ключ Активации')
+    verification_key = models.CharField(max_length=35, default='Не верифицирован', verbose_name='Ключ Активации')
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []

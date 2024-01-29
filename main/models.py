@@ -17,6 +17,10 @@ class Product(models.Model):
 
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, **NULLABLE,
                               verbose_name='Владелец')
+    is_published = models.BooleanField(default=False, verbose_name='Статус публикации')
+
+    class Meta:
+        permissions = [('set_published', 'Can publish product')]
 
     def __str__(self):
         return f'{self.product_name} {self.description}'
