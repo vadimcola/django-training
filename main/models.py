@@ -1,6 +1,9 @@
+from django.conf import settings
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
+
+NULLABLE = {'blank': True, 'null': True}
 
 
 class Product(models.Model):
@@ -11,6 +14,9 @@ class Product(models.Model):
     price = models.IntegerField(verbose_name='Цена', blank=True)
     time_create = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     time_update = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
+
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, **NULLABLE,
+                              verbose_name='Владелец')
 
     def __str__(self):
         return f'{self.product_name} {self.description}'
